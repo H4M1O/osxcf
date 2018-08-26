@@ -83,6 +83,11 @@ alias c...='cd ../../..'
 alias c....='cd ../../../..'
 alias c.....='cd ../../../../..'
 
+# call cheat.sh to show sheat sheets
+alias cs='cht.sh'
+alias cso='curl cheat.sh'
+alias css='cht.sh --shell'
+
 # call cat with highlights
 cats() { highlight -O xterm256 -s molokai -l $1 | less -R; }
 

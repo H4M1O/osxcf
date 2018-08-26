@@ -1,7 +1,7 @@
 #!/bin/bash                                                                                                                                     
 # Script: Mac OS X Configuration File                                             
 # Description: OSXCF is a simple script to personalize your terminal in Mac OS X as H4M1O.
-# Version: 1.0.0                                                               
+# Version: 1.0.1                                                               
 # Date: 26-08-2018                                                               
 # Author: Claudio Proietti                                                       
 # License: The MIT License (MIT) - Copyright (c) 2018 Claudio Proietti
@@ -71,12 +71,12 @@ function menu ()
 function base_cfg ()
 {
 	# install homebrew
-	#/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     # copy .bashrc base
-    #cp .bash_profile ~/.bash_profile
-    #cp .bashrc ~/.bashrc
-	#cp .sec_alias ~/.sec_alias
-    #source ~/.bash_profile
+    cp .bash_profile ~/.bash_profile
+    cp .bashrc ~/.bashrc
+	cp .sec_alias ~/.sec_alias
+    source ~/.bash_profile
     # install wget
     brew install wget
     # install and configure GIT
@@ -84,14 +84,16 @@ function base_cfg ()
     git config --global push.followTags true
     # install and configure VIM
     brew install vim
-    #cp -r .vim ~/
-    #cp .vimrc ~/
-    #cp .plugins_vim ~/
+    cp -r .vim ~/
+    cp .vimrc ~/
+    cp .plugins_vim ~/
     # install and configure TMUX
     brew install tmux
-    #cp .tmux.conf ~/
+    cp .tmux.conf ~/
     # Copy Wallpapers
-	#cp -r Wallpapers ~/Pictures
+	cp -r Wallpapers ~/Pictures
+	# install Cheat.sh client
+	curl https://cht.sh/:cht.sh > ~/cht.sh; chmod +x ~/cht.sh
 }
 
 function work_apps ()
